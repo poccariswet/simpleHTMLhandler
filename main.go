@@ -20,12 +20,14 @@ func simpleHTMLhandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Fprintln(os.Stderr, errors.New("args is not 2"))
+		fmt.Fprintln(os.Stderr, errors.New("args is not 3"))
+		fmt.Println("example: simpleHTMLhandler <html> <port>")
 		os.Exit(1)
 	}
 	f = os.Args[1]
+	port = os.Args[2]
 
 	http.HandleFunc("/", simpleHTMLhandler)
-	fmt.Println("http://localhost:8080")
-	http.ListenAndServe(":8080", nil)
+	fmt.Println(fmt.Sprintf("http://localhost:%s", port))
+	http.ListenAndServe(":"+port, nil)
 }
