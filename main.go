@@ -25,7 +25,7 @@ func main() {
 		os.Exit(1)
 	}
 	f = os.Args[1]
-	port = os.Args[2]
+	port := os.Args[2]
 
 	http.HandleFunc("/", simpleHTMLhandler)
 	fmt.Println(fmt.Sprintf("http://localhost:%s", port))
