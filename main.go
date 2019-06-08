@@ -19,7 +19,7 @@ func simpleHTMLhandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	if len(os.Args) != 2 {
+	if len(os.Args) != 3 {
 		fmt.Fprintln(os.Stderr, errors.New("args is not 3"))
 		fmt.Println("example: simpleHTMLhandler <html> <port>")
 		os.Exit(1)
